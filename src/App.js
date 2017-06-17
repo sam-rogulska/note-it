@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 import './App.css';
 import Notes from './components/Notes';
+import CreateNote from './components/CreateNote';
 
 class App extends Component {
   constructor(props){
@@ -23,7 +24,7 @@ class App extends Component {
               Write some stuff about how it works.
             </p>
             <button className="noteIt-createButton" onClick={this.addNote}>Add Note</button>
-          
+            ReactDOM.render(<CreateNote />, document.getElementById('root'));
               <Notes notes={notes}/>
           
           </div>
@@ -38,6 +39,7 @@ class App extends Component {
           <p className="noteIt-intro">
             Write some stuff about how it works.
           </p>
+          <CreateNote />
           <button className="noteIt-createButton" onClick={this.addNote}>Add Note</button>
         </div>
       );
