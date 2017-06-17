@@ -33,10 +33,20 @@ class App extends Component {
         <p className="noteIt-intro">
           Write some stuff about how it works.
         </p>
-        <button className="noteIt-createButton">Add Note</button>
+        <button className="noteIt-createButton" onClick={this.addNote}>Add Note</button>
         <Notes notes={notes} />
       </div>
     );
+  }
+  addNote = () => {
+    this.setState({
+      notes: this.state.notes.concat([{
+        id: uuid.v4(),
+        title: 'new note title',
+        text: 'new note',
+        createdDate: '17/06/2017'
+      }])
+    })
   }
 }
 
