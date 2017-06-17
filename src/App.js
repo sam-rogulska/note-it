@@ -44,14 +44,26 @@ class App extends Component {
     }
   }
   addNote = () => {
-    const notes = this.state.notes
     const key = 'notes';
-    notes.push({
-        id: uuid.v4(),
-        title: 'new note title',
-        text: 'new note',
-        createdDate: '17/06/2017'
-      });
+    let notes;
+    if (this.state.notes !== null) {
+      notes = this.state.notes
+      notes.push({
+          id: uuid.v4(),
+          title: 'new note title',
+          text: 'new note',
+          createdDate: '17/06/2017'
+        });
+      
+    }
+    else {
+      notes = [{
+          id: uuid.v4(),
+          title: 'new note title',
+          text: 'new note',
+          createdDate: '17/06/2017' 
+      }];
+    }
     this.setState({ notes: notes });
     localStorage.setItem(key, JSON.stringify(notes));
   }
