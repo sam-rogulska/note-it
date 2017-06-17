@@ -23,9 +23,8 @@ class App extends Component {
             <p className="noteIt-intro">
               Write some stuff about how it works.
             </p>
-            <button className="noteIt-createButton" onClick={this.addNote}>Add Note</button>
-            ReactDOM.render(<CreateNote />, document.getElementById('root'));
-              <Notes notes={notes}/>
+            <CreateNote />
+            <Notes notes={notes}/>
           
           </div>
         );
