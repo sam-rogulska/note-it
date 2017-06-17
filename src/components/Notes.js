@@ -1,14 +1,15 @@
 import React from 'react';
+import uuid from 'uuid';
 
 const notes = [
   {
-    id: 'n0t31',
+    id: uuid.v4(),
     title: 'note title',
     text: 'note',
     createdDate: '17/06/2017'
   },
   {
-    id: 'n0t32',
+    id: uuid.v4(),
     title: 'note title 2',
     text: 'note 2',
     createdDate: '17/06/2017'
