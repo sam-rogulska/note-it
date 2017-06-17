@@ -1,9 +1,30 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import './App.css';
 import Notes from './components/Notes';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      notes: [
+        {
+          id: uuid.v4(),
+          title: 'note title',
+          text: 'note',
+          createdDate: '17/06/2017'
+        },
+        {
+          id: uuid.v4(),
+          title: 'note title 2',
+          text: 'note 2',
+          createdDate: '17/06/2017'
+        }
+      ]
+    }
+  }
   render() {
+    const {notes} = this.state
     return (
       <div className="noteIt">
         <div className="noteIt-header">
@@ -13,7 +34,7 @@ class App extends Component {
           Write some stuff about how it works.
         </p>
         <button className="noteIt-createButton">Add Note</button>
-        <Notes />
+        <Notes notes={notes} />
       </div>
     );
   }
