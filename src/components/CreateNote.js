@@ -10,7 +10,8 @@ class CreateNote extends Component {
     this.handleChangeInput = this.handleChangeInput.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
   }
-  handleChangeText(event, value) {
+//TODO: take this down to one function
+  handleChangeText(event) {
     this.setState({textValue: event.target.value});
   }
   handleChangeInput(event) {
