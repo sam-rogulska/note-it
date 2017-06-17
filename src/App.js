@@ -7,23 +7,11 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      notes: [
-        {
-          id: uuid.v4(),
-          title: 'note title',
-          text: 'note',
-          createdDate: '17/06/2017'
-        },
-        {
-          id: uuid.v4(),
-          title: 'note title 2',
-          text: 'note 2',
-          createdDate: '17/06/2017'
-        }
-      ]
+      notes: JSON.parse(localStorage.getItem("notes"))
     }
   }
   render() {
+    console.log(JSON.parse(localStorage.getItem("notes")))
     const {notes} = this.state
     return (
       <div className="noteIt">
@@ -39,14 +27,16 @@ class App extends Component {
     );
   }
   addNote = () => {
-    this.setState({
-      notes: this.state.notes.concat([{
+    const notes = this.state.notes
+    const key = 'notes';
+    notes.push({
         id: uuid.v4(),
         title: 'new note title',
         text: 'new note',
         createdDate: '17/06/2017'
-      }])
-    })
+      });
+    this.setState({ notes: notes });
+    localStorage.setItem(key, JSON.stringify(notes));
   }
 }
 
