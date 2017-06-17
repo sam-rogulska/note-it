@@ -11,20 +11,37 @@ class App extends Component {
     }
   }
   render() {
-    console.log(JSON.parse(localStorage.getItem("notes")))
-    const {notes} = this.state
-    return (
-      <div className="noteIt">
-        <div className="noteIt-header">
-          <h2>Welcome to Note-it</h2>
+    //TODO: tidy this into components
+    if (this.state.notes !== null) {
+      const {notes} = this.state;
+      return (
+          <div className="noteIt">
+            <div className="noteIt-header">
+              <h2>Welcome to Note-it</h2>
+            </div>
+            <p className="noteIt-intro">
+              Write some stuff about how it works.
+            </p>
+            <button className="noteIt-createButton" onClick={this.addNote}>Add Note</button>
+          
+              <Notes notes={notes}/>
+          
+          </div>
+        );
+    }
+    else {
+      return (
+        <div className="noteIt">
+          <div className="noteIt-header">
+            <h2>Welcome to Note-it</h2>
+          </div>
+          <p className="noteIt-intro">
+            Write some stuff about how it works.
+          </p>
+          <button className="noteIt-createButton" onClick={this.addNote}>Add Note</button>
         </div>
-        <p className="noteIt-intro">
-          Write some stuff about how it works.
-        </p>
-        <button className="noteIt-createButton" onClick={this.addNote}>Add Note</button>
-        <Notes notes={notes} />
-      </div>
-    );
+      );
+    }
   }
   addNote = () => {
     const notes = this.state.notes
