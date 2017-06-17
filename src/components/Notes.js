@@ -1,22 +1,6 @@
 import React from 'react';
-import uuid from 'uuid';
 
-const notes = [
-  {
-    id: uuid.v4(),
-    title: 'note title',
-    text: 'note',
-    createdDate: '17/06/2017'
-  },
-  {
-    id: uuid.v4(),
-    title: 'note title 2',
-    text: 'note 2',
-    createdDate: '17/06/2017'
-  }
-];
-
-export default () => (
+export default ({notes}) => (
   <div className="notes_list">{notes.map(note =>
     <div key={note.id}>
       <h2>{note.title}</h2>
