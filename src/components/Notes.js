@@ -72,21 +72,12 @@ class Notes extends Component {
     const {notes} = this.state;
       return (
           <div className="notesList">{notes.map(note =>
-           <div key={note.id}>
-            <div className="noteList-note">
-              <h2>{note.title}</h2>
-              <button data-key={note.id} onClick={this.deleteNote}>X</button>
-              <p>{note.text}</p>
-              <p>{note.createdDate}</p>
-              <button data-key={note.id} onClick={this.editNote}>Edit</button>
-            </div>
-            {/*<div className="noteList-editNote">
-              <form className="editNote-form">
-                <input type="text" className="titleInput" data-key={note.id} value={note.title} onChange={this.handleChangeInput}></input>
-                <textarea className="textArea" data-key={note.id} value={note.text} onChange={this.handleChangeInput}></textarea>
-                <button className="submitButton"  data-key={note.id} onClick={this.updateNote}>Update Note</button>
-            </form>
-            </div>*/}
+           <div key={note.id} className="noteList-note">
+            <button className="deleteNote" data-key={note.id} onClick={this.deleteNote}>X</button>
+            <h2>{note.title}</h2>
+            <p>{note.text}</p>
+            <p className="noteDate">{note.createdDate}</p>
+            <button data-key={note.id} onClick={this.editNote}>Edit</button>
             </div>
           )}</div>
         );
