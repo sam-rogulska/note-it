@@ -2,66 +2,14 @@
   text-align: center;
 }
 
-.createNote {
-  width: 20%;
-  margin: 20px auto;
-  min-width: 300px;
-}
-
-.createNote-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.editNote {
-  width: 20%;
-  margin: 20px auto;
-  display: none;
-}
-
 .show {
   display: flex;
 }
 
-.editNote-form {
-  flex-direction: column;
-  display: flex;
-}
-
-.titleInput {
-  margin-bottom: 20px;
-}
-
-.textArea {
-  margin-bottom: 20px;
-  min-height: 300px;
-}
-
-.notesList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.noteList-note {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 30%;
-  border: 1px solid #999;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 1px;
-}
-
-.deleteNote {
-  float: right;
-  border: none;
-  background: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.noteDate {
+.hidden {
   display: none;
+}
+
+button {
+  cursor: pointer;
 }

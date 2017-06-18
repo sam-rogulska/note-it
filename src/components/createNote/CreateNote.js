@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
+import './CreateNote.css';
 
 class CreateNote extends Component {
   constructor(props){

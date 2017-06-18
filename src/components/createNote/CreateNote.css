@@ -1,0 +1,19 @@
+.createNote {
+  width: 20%;
+  margin: 20px auto;
+  min-width: 300px;
+}
+
+.createNote-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleInput {
+  margin-bottom: 20px;
+}
+
+.textArea {
+  margin-bottom: 20px;
+  min-height: 300px;
+}

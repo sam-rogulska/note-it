@@ -1,0 +1,19 @@
+.editNote {
+  width: 20%;
+  margin: 20px auto;
+  min-width: 300px
+}
+
+.editNote-form {
+  flex-direction: column;
+  display: flex;
+}
+
+.titleInput {
+  margin-bottom: 20px;
+}
+
+.textArea {
+  margin-bottom: 20px;
+  min-height: 300px;
+}

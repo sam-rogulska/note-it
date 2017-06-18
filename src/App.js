@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Notes from './components/Notes';
-import CreateNote from './components/CreateNote';
-import EditNote from './components/EditNote';
+import Notes from './components/notes/Notes';
+import CreateNote from './components/createNote/CreateNote';
+import EditNote from './components/editNote/EditNote';
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
               Write some stuff about how it works.
             </p>
             <CreateNote />
-            <EditNote />
+            <EditNote className={this.props.showHideSidenav}/>
             <Notes/>
           </div>
         );
