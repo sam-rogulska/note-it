@@ -15,6 +15,7 @@ class EditNote extends Component {
         }
       ]
     }
+    console.log(this.state.noteToEdit);
     // this.state = {inputValue: '', textValue: '', date: date, notes: JSON.parse(localStorage.getItem("notes"))};
     // this.handleChangeInput = this.handleChangeInput.bind(this);
     // this.handleChangeText = this.handleChangeText.bind(this);
@@ -27,8 +28,8 @@ class EditNote extends Component {
                     <h2>Edit Note</h2>
                 </div>
             <form className="editNote-form">
-                <input type="text" className="titleInput" value={noteE.title} onChange={this.handleChangeInput}></input>
-                <textarea className="textArea" value={noteE.text} onChange={this.handleChangeText}></textarea>
+                <input placeholder="note title" type="text" className="titleInput" value={noteE.title} onChange={this.handleChangeInput}></input>
+                <textarea placeholder="note text" className="textArea" value={noteE.text} onChange={this.handleChangeText}></textarea>
                 <button className="submitButton" onClick={this.updateNote}>Update Note</button>
             </form></div>
             )}</div>
