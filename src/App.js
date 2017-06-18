@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Notes from './components/Notes';
 import CreateNote from './components/CreateNote';
+import EditNote from './components/EditNote';
 
 class App extends Component {
-  // constructor(props){
-  //   super(props)
-  
-  // }
   render() {
       return (
           <div className="noteIt">
@@ -18,8 +15,8 @@ class App extends Component {
               Write some stuff about how it works.
             </p>
             <CreateNote />
+            <EditNote />
             <Notes/>
-          
           </div>
         );
   }

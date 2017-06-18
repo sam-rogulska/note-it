@@ -4,29 +4,89 @@ class Notes extends Component {
   constructor(props){
     super(props)
      this.state = {
-      notes: JSON.parse(localStorage.getItem("notes"))
+      notes: JSON.parse(localStorage.getItem("notes")),
+      inputValue: '', 
+      textValue: '',
+      noteToEdit: [
+        {
+          id: '',
+          title: '',
+          text: '',
+          createdDate: ''
+        }
+      ]
     }
     this.deleteNote = this.deleteNote.bind(this);
+    this.editNote = this.editNote.bind(this);
+    this.updateNote = this.updateNote.bind(this);
+    this.handleChangeInput = this.handleChangeInput.bind(this);
+    this.handleChangeText = this.handleChangeText.bind(this);
   }
   deleteNote(event){
-    console.log(this.state.notes);
     const key = 'notes';
     const noteKey = event.target.dataset.key;
     const notesArray = this.state.notes;
-    const updatedNotes = notesArray.filter(x => x.id !== noteKey)
+    const updatedNotes = notesArray.filter(x => x.id !== noteKey);
     this.setState({ notes: updatedNotes });
     localStorage.setItem(key, JSON.stringify(updatedNotes));
+  }
+  editNote(event){
+    event.preventDefault();
+    // console.log('editNote');
+    const noteKey = event.target.dataset.key;
+    const notesArray = this.state.notes;
+    console.log(notesArray);
+    const noteToEdit = this.state.noteToEdit;
+    console.log(noteToEdit);
+    const noteEdit = notesArray.filter(x => x.id === noteKey);
+    console.log(noteEdit);
+    noteToEdit.push({noteEdit});
+    noteToEdit.shift();
+    localStorage.setItem('editNote', JSON.stringify(noteEdit));
+    // console.log(this.state.noteToEdit);
+    //write code to show edit note & hide note
+  }
+  updateNote(event){
+    event.preventDefault();
+    console.log('updateNote');
+    const key = 'notes';
+    const noteKey = event.target.dataset.key;
+    const notesArray = this.state.notes;
+    // const noteToEdit = this.state.noteToEdit;
+    const noteToUpdate = notesArray.filter(x => x.id === noteKey);
+    console.log(noteToUpdate);
+    // noteToEdit.push({noteEdit});
+    // noteToEdit.shift();
+    // console.log(this.state.noteToEdit);
+    
+
+  }
+  handleChangeText(event) {
+    //this.setState({textValue: event.target.value});
+  }
+  handleChangeInput(event) {
+    //this.setState({inputValue: event.target.value});
   }
   //todo: fix when empty
   render() {
     const {notes} = this.state;
       return (
-          <div className="notes_list">{notes.map(note =>
+          <div className="notesList">{notes.map(note =>
            <div key={note.id}>
-             <h2>{note.title}</h2>
+            <div className="noteList-note">
+              <h2>{note.title}</h2>
               <button data-key={note.id} onClick={this.deleteNote}>X</button>
               <p>{note.text}</p>
               <p>{note.createdDate}</p>
+              <button data-key={note.id} onClick={this.editNote}>Edit</button>
+            </div>
+            {/*<div className="noteList-editNote">
+              <form className="editNote-form">
+                <input type="text" className="titleInput" data-key={note.id} value={note.title} onChange={this.handleChangeInput}></input>
+                <textarea className="textArea" data-key={note.id} value={note.text} onChange={this.handleChangeInput}></textarea>
+                <button className="submitButton"  data-key={note.id} onClick={this.updateNote}>Update Note</button>
+            </form>
+            </div>*/}
             </div>
           )}</div>
         );
