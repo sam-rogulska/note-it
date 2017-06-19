@@ -5,9 +5,10 @@ import './CreateNote.css';
 class CreateNote extends Component {
   constructor(props){
     super(props)
-    var today = new Date(),
+    let today = new Date(),
         date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-    this.state = {inputValue: '', textValue: '', date: date, notes: JSON.parse(localStorage.getItem("notes"))};
+    const setNotes = JSON.parse(localStorage.getItem("notes")) || [];
+    this.state = {inputValue: '', textValue: '', date: date, notes: setNotes};
     this.handleChangeInput = this.handleChangeInput.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
   }
