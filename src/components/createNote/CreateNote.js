@@ -50,8 +50,8 @@ class CreateNote extends Component {
               <h2>Create a new Note</h2>
             </div>
             <form className="createNote-form">
-                <input placeholder="note title" type="text" className="titleInput" value={this.state.inputValue} onChange={this.handleChangeInput}></input>
-                <textarea placeholder="note text" className="textArea" value={this.state.textValue} onChange={this.handleChangeText}></textarea>
+                <input placeholder="enter a title..." type="text" className="titleInput" value={this.state.inputValue} onChange={this.handleChangeInput}></input>
+                <textarea placeholder="write your note..." className="textArea" value={this.state.textValue} onChange={this.handleChangeText}></textarea>
                 <button className="submitButton" onClick={this.addNote}>Add Note</button>
             </form>
           </div>
