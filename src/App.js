@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Notes from './components/notes/Notes';
 import CreateNote from './components/createNote/CreateNote';
-import EditNote from './components/editNote/EditNote';
 
 class App extends Component {
   render() {
