@@ -11,9 +11,12 @@
 
 .titleInput {
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 .textArea {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 20px;
   min-height: 300px;
+  padding: 10px;
 }
