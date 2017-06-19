@@ -15,7 +15,7 @@ class App extends Component {
               Write some stuff about how it works.
             </p>
             <CreateNote />
-            <EditNote className={this.props.showHideSidenav}/>
+            <EditNote />
             <Notes/>
           </div>
         );
